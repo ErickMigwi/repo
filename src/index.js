@@ -4,10 +4,10 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ProductsContext } from "./context";
-import {products} from './data'
+import {getProducts} from './data'
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ProductsContext.Provider value={products} >
+  <ProductsContext.Provider value={getProducts} >
     <BrowserRouter>
       <App />
     </BrowserRouter>

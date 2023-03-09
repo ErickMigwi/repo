@@ -10,6 +10,7 @@ function Navbar() {
        <div className="right">
         <Link to={"/"}>Home</Link>
         <Link to={"/products"}>Products </Link>
+        {/* <Link to={".Erick"}>Erick</Link> */}
        </div>
     </div>
   )

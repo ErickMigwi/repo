@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import {  useApi } from "./api";
+import { ProductsContext } from "../App";
+import ProductsDisplay from "./ProductsDisplay";
+
 
 function Products() {
+  const products = useContext(ProductsContext);
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-  const products = useApi()
+
   const handleCategoryNavigation = (category) => {
     navigate(`/products/${category}`);
   };
 
   useEffect(() => {
-    const categories = products.getProductData().map((p) => p.category);
-
+    const categories = products.map((p) => p.category);
     const categoriesArr = Array.from(new Set(categories));
     setCategories(categoriesArr);
   }, [products]);
+
   return (
     <div>
-     
       <div className="productsLayout">
         <div>
           <div className="categories">
