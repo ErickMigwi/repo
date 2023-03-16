@@ -4,9 +4,11 @@ import { ProductsContext } from "../App";
 
 function OneProduct() {
   const { id } = useParams();
-  const products = useContext(ProductsContext);
+  const {products} = useContext(ProductsContext);
   const [product, setProduct] = useState();
-
+  let handleAddToCart = ()=>{
+    console.log(78);
+  }
   useEffect(() => {
     let product = products.find((p) => p.id === +id);
     setProduct(product);
@@ -26,7 +28,7 @@ function OneProduct() {
             Discount: {product?.discountPercentage}%
           </span>
         </span>
-        <span className="addItemToCart">Add to cart</span>
+        <span className="addItemToCart" onClick={handleAddToCart}>Add to cart</span>
       </div>
     </div>
   );

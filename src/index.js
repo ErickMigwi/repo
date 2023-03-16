@@ -5,6 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ProductsContext } from "./context";
 import {getProducts} from './data'
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ProductsContext.Provider value={getProducts} >
